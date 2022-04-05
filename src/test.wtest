@@ -8,16 +8,30 @@ test "encontrar artefactos" {
 }
 
 test "castillo" {
+	const objetos = #{espadaDelDestino,libroDeHechizos,collarDivino}
 	rolando.agarrarArtefacto(espadaDelDestino)
 	rolando.agarrarArtefacto(libroDeHechizos)
 	rolando.irAlCastillo()
-	
-}
-
-test "posesiones" {
+	rolando.agarrarArtefacto(collarDivino)
+	rolando.irAlCastillo()
+	assert.equals(castilloDePiedra.artefactosGuardados(),objetos)
 	
 }
 
 test "historia" {
+	const objetosEncontrados = [espadaDelDestino,libroDeHechizos,collarDivino,armaduraDeAceroValyrio,collarDivino]
+	rolando.agarrarArtefacto(espadaDelDestino)
+	rolando.agarrarArtefacto(libroDeHechizos)
+	rolando.agarrarArtefacto(collarDivino)
+	rolando.irAlCastillo()
+	rolando.agarrarArtefacto(armaduraDeAceroValyrio)
+	rolando.agarrarArtefacto(collarDivino)
+	assert.equals(rolando.objetosEncontrados(),objetosEncontrados)
+		
+}
+
+/*test "posesiones" {
 	
 }
+
+*/
