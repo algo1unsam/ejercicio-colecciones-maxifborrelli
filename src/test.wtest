@@ -1,10 +1,12 @@
 import capos.*
 
 test "encontrar artefactos" {
+	const objetos = #{espadaDelDestino,libroDeHechizos}
 	rolando.agarrarArtefacto(espadaDelDestino)
 	rolando.agarrarArtefacto(libroDeHechizos)
 	rolando.agarrarArtefacto(collarDivino)
 	assert.notThat(rolando.artefactos().contains(collarDivino))
+	assert.equals(rolando.artefactos(),objetos)
 }
 
 test "castillo" {
